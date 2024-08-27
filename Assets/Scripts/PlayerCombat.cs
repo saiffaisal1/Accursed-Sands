@@ -5,18 +5,29 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public Animator animator;
+
     public Transform AttackPoint;
-    public float Attackrange = 0.5f;
     public LayerMask EnemyLayers;
 
+    public float Attackrange = 0.5f;
+    public int attackDamage = 40;
+
+    public float attackRate = 1f;
+    float nextAttacktime = 0f;
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            Attack();
+        if (Time.time >= nextAttacktime)
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Attack();
+                nextAttacktime = Time.time + 1 / attackRate; 
 
+            }
         }
+       
     }
 
     void Attack() {
@@ -26,7 +37,7 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hitenemies)
         {
-            Debug.Log("We hit " + enemy.name);
+            enemy.GetComponent<Enemy>().takeDamage(attackDamage);
 
         }
 
