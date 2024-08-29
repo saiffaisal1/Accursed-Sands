@@ -54,10 +54,10 @@ public class Player : MonoBehaviour
         animator.SetBool("isDead", true);
 
 
-        this.enabled = false;
         cantMove();
         cantAttack();
     }
+
 
     void cantMove()
     {
