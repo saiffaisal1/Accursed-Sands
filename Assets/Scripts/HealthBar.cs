@@ -4,24 +4,28 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
 
-    public Slider slider;
+    public Slider healthSlider;
+    public Slider easeHealthSlider;
+    public int MaxHealth;
+    public int health;
+    [SerializeField] private float lerpSpeed;
 
-
-    private void Start(){
+    void Start(){
         
     }
-    public void setMaxHealth(int health)
-    {
-        slider.maxValue = health;
-        slider.value = health;
+
+    void Update(){
+        if (healthSlider.value != health){
+            healthSlider.value = health;
+        }
+
+        if (healthSlider.value != easeHealthSlider.value){
+            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, health, lerpSpeed);
+        }
     }
-
-
     public void setHealth(int health)
     {
-
-    slider.value = health; 
-    
+        healthSlider.value = health; 
     }
 
 }

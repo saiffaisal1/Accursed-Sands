@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int maxHealth = 100;
-    int currentHealth = 0;
+    public int maxHealth;
+    int currentHealth;
 
     public HealthBar healthbar;
 
@@ -14,23 +14,21 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         currentHealth = maxHealth;
-        healthbar.setMaxHealth(maxHealth);
-
-
+        healthbar.MaxHealth = maxHealth;
+        healthbar.healthSlider.maxValue = maxHealth;
+        healthbar.easeHealthSlider.maxValue = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthbar.health = currentHealth;
 
         if (Input.GetKeyDown(KeyCode.F))
         {
             takeDamage(10);
             animator.SetTrigger("Hurt");
-
-
         }
     }
 
