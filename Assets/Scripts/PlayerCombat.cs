@@ -25,10 +25,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 Attack();
                 nextAttacktime = Time.time + 1 / attackRate;
-<<<<<<< Updated upstream
                 GetComponent<PlayerMovement>().enabled = false;
-=======
->>>>>>> Stashed changes
                 
 
             }
