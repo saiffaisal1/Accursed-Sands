@@ -26,6 +26,7 @@ public class PlayerCombat : MonoBehaviour
                 Attack();
                 nextAttacktime = Time.time + 1 / attackRate;
                 GetComponent<PlayerMovement>().enabled = false;
+
                 
 
             }
