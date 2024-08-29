@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     private float vertical;
     private float horizontal;
-    private float speed = 4f;
+    private float speed = 5f;
     private bool isFacingRight = true;
 
     private bool canDash = true;
