@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     private float vertical;
     private float horizontal;
-    private float speed = 5f;
+    public float speed = 5f;
     private bool isFacingRight = true;
 
     private bool canDash = true;
@@ -20,6 +20,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            speed = 0f;
+        } 
+        else 
+        {
+            speed = 5f;
+        }
+
         if (isDashing)
         {
             return;

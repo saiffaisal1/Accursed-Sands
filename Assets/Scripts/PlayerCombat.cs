@@ -20,12 +20,10 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Time.time >= nextAttacktime)
         {
-            GetComponent<PlayerMovement>().enabled = true;
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Attack();
                 nextAttacktime = Time.time + 1 / attackRate;
-                GetComponent<PlayerMovement>().enabled = false;
 
                 
 
@@ -46,8 +44,6 @@ public class PlayerCombat : MonoBehaviour
             enemy.GetComponent<Enemy>().takeDamage(attackDamage);
 
         }
-
-
     }
 
     void OnDrawGizmosSelected() {
