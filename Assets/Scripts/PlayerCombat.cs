@@ -25,7 +25,10 @@ public class PlayerCombat : MonoBehaviour
             {
                 Attack();
                 nextAttacktime = Time.time + 1 / attackRate;
+<<<<<<< Updated upstream
                 GetComponent<PlayerMovement>().enabled = false;
+=======
+>>>>>>> Stashed changes
                 
 
             }
@@ -34,7 +37,9 @@ public class PlayerCombat : MonoBehaviour
     }
 
     void Attack() {
+
         animator.SetTrigger("Attack");
+
 
         Collider2D[] hitenemies = Physics2D.OverlapCircleAll(AttackPoint.position, Attackrange, EnemyLayers);
 
