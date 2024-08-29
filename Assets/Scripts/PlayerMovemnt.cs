@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        rb.velocity = new Vector2(horizontal * speed, vertical * speed);
+        rb.velocity = new Vector2(horizontal, vertical).normalized * speed;
         
     }
 
@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-        rb.velocity = new Vector2(horizontal * dashingPower, vertical * dashingPower);
+        rb.velocity = new Vector2(horizontal, vertical).normalized * dashingPower;
         tr.emitting = true;
         yield return new WaitForSeconds(dashingTime);
         tr.emitting = false;
