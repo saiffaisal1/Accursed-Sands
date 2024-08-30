@@ -6,7 +6,6 @@ public class StamBar : MonoBehaviour
     public Slider stamSlider;
     public int maxStam;
     public int stam;
-    // Start is called before the first frame update
     void Start()
     {
         stam = maxStam;

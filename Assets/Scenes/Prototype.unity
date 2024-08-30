@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamSlider: {fileID: 161831435}
-  maxStam: 0
+  maxStam: 100
   stam: 0
 --- !u!114 &161831435
 MonoBehaviour:
@@ -17801,7 +17801,7 @@ MonoBehaviour:
   easeHealthSlider: {fileID: 290087471}
   MaxHealth: 0
   health: 0
-  lerpSpeed: 0.03
+  lerpSpeed: 0.009
 --- !u!1 &1512400071
 GameObject:
   m_ObjectHideFlags: 0
