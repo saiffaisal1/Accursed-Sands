@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
+    private StamBar stam;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private TrailRenderer tr;
 
@@ -41,8 +43,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             animator.SetBool("IsDashing", true);
-            StartCoroutine(Dash());
-            
+            StartCoroutine(Dash());            
         }
 
         animator.SetFloat("Speed", rb.velocity.magnitude);

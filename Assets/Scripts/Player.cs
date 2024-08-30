@@ -3,9 +3,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int maxHealth;
-    int currentHealth;
+    [SerializeField] private int currentHealth;
+    public int maxStam;
+    [SerializeField] private int currentStam;
 
     public HealthBar healthbar;
+    public StamBar stambar;
 
     public Animator animator;
  
@@ -18,12 +21,17 @@ public class Player : MonoBehaviour
         healthbar.MaxHealth = maxHealth;
         healthbar.healthSlider.maxValue = maxHealth;
         healthbar.easeHealthSlider.maxValue = maxHealth;
+
+        currentStam = maxStam;
+        stambar.maxStam = maxStam;
+        stambar.stamSlider.maxValue = maxStam;
     }
 
     // Update is called once per frame
     void Update()
     {
         healthbar.health = currentHealth;
+        stambar.stam = currentStam;
 
         if (Input.GetKeyDown(KeyCode.F))
         {
