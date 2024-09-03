@@ -5206,7 +5206,7 @@ MonoBehaviour:
   maxStam: 100
   currentStam: 0
   healthbar: {fileID: 1486297532}
-  stambar: {fileID: 0}
+  stambar: {fileID: 161831436}
   animator: {fileID: 763991138}
 --- !u!1 &783020008
 GameObject:
