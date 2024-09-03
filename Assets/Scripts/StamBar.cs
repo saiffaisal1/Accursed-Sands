@@ -11,7 +11,7 @@ public class StamBar : MonoBehaviour
     [HideInInspector] public bool hasRegened = true;
     [SerializeField] private Animator animator;
 
-    [Range(0, 50)] [SerializeField] private float stamRegen = 25f;
+    [Range(0, 50)] [SerializeField] private float stamRegen = 0.25f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +42,13 @@ public class StamBar : MonoBehaviour
             stamSlider.value = 0;
             hasRegened = false;
         }
+    }
+
+    void FixedUpdate()
+    {
+        stamAttack();
+        stamDash();
+
     }
 
 
