@@ -3,13 +3,10 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public Animator animator;
-
     public Transform AttackPoint;
     public LayerMask EnemyLayers;
-
     public float Attackrange = 0.5f;
     public int attackDamage = 40;
-
     public float attackRate = 1f;
     float nextAttacktime = 0f;
 
