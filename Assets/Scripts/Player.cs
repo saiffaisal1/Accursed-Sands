@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int currentStam;
 
     public HealthBar healthbar;
-    public StamBar stambar;
+    public StamBar2 stambar;
 
     public Animator animator;
  
@@ -23,15 +23,15 @@ public class Player : MonoBehaviour
         healthbar.easeHealthSlider.maxValue = maxHealth;
 
         currentStam = maxStam;
-        stambar.maxStam = maxStam;
+        stambar.maxStamina = maxStam;
         stambar.stamSlider.maxValue = maxStam;
+        stambar.currentStamina = currentStam;
     }
 
     // Update is called once per frame
     void Update()
     {
         healthbar.health = currentHealth;
-        stambar.stam = currentStam;
 
         if (Input.GetKeyDown(KeyCode.F))
         {

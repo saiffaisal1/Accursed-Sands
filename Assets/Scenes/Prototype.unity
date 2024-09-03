@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 161831433}
   - component: {fileID: 161831435}
   - component: {fileID: 161831434}
+  - component: {fileID: 161831436}
   m_Layer: 5
   m_Name: Stam Bar
   m_TagString: Untagged
@@ -169,7 +170,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161831432}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ce2af7e503f09e48a4054a3bcad68e8, type: 3}
   m_Name: 
@@ -231,6 +232,25 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &161831436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161831432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a0e0e41e8a56245be225638571eac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStamina: 100
+  currentStamina: 0
+  staminaRegenRate: 10
+  staminaDrainAmount: 20
+  dashStaminaCost: 30
+  regenDelay: 1
+  stamSlider: {fileID: 161831435}
 --- !u!1 &203196000
 GameObject:
   m_ObjectHideFlags: 0
@@ -4898,7 +4918,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 150070925
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 100
   m_Sprite: {fileID: -3318188226485093758, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5023,9 +5043,9 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 150070925
+  m_SortingLayer: 1
+  m_SortingOrder: 100
   m_Time: 0.5
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -5186,7 +5206,7 @@ MonoBehaviour:
   maxStam: 100
   currentStam: 0
   healthbar: {fileID: 1486297532}
-  stambar: {fileID: 161831434}
+  stambar: {fileID: 0}
   animator: {fileID: 763991138}
 --- !u!1 &783020008
 GameObject:

@@ -15,8 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
-    private StamBar stam;
-
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private TrailRenderer tr;
 

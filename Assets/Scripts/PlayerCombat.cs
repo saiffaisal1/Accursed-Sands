@@ -13,8 +13,6 @@ public class PlayerCombat : MonoBehaviour
     public float attackRate = 1f;
     float nextAttacktime = 0f;
 
-    private StamBar stam;
-
 
     void Update()
     {
