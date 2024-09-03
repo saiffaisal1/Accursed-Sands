@@ -5384,7 +5384,7 @@ MonoBehaviour:
   maxStam: 100
   currentStam: 0
   healthbar: {fileID: 1486297532}
-  stambar: {fileID: 161831436}
+  stambar: {fileID: 0}
   animator: {fileID: 763991138}
 --- !u!96 &763991143
 TrailRenderer:
