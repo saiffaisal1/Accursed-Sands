@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 161831435}
   - component: {fileID: 161831434}
   - component: {fileID: 161831436}
+  - component: {fileID: 161831437}
   m_Layer: 5
   m_Name: Stam Bar
   m_TagString: Untagged
@@ -239,7 +240,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161831432}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9a0e0e41e8a56245be225638571eac4, type: 3}
   m_Name: 
@@ -251,6 +252,24 @@ MonoBehaviour:
   dashStaminaCost: 30
   regenDelay: 1
   stamSlider: {fileID: 161831435}
+  animator: {fileID: 763991138}
+--- !u!114 &161831437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161831432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d640911587bd574ebaa1700f33e142f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStamina: 100
+  currentStamina: 0
+  staminaRegenRate: 10
+  regenDelay: 2.8
+  staminaSlider: {fileID: 161831435}
 --- !u!1 &203196000
 GameObject:
   m_ObjectHideFlags: 0
@@ -4967,6 +4986,8 @@ MonoBehaviour:
   Attackrange: 0.4
   attackDamage: 40
   attackRate: 1
+  stam: {fileID: 161831437}
+  staminaAttackCost: 20
 --- !u!114 &763991137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4981,6 +5002,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 763991138}
   speed: 5
+  stam: {fileID: 161831437}
+  dashStaminaCost: 30
   rb: {fileID: 763991141}
   tr: {fileID: 763991139}
 --- !u!95 &763991138

@@ -14,9 +14,13 @@ public class StamBar2 : MonoBehaviour{
     private float regenTimer;
 
     public Slider stamSlider;
+    public Animator animator;
 
     void Start()
     {
+        animator.SetBool("canAttack", true);
+        animator.SetBool("canDash", true);
+
     }
 
     void Update()
@@ -58,15 +62,22 @@ public class StamBar2 : MonoBehaviour{
             regenTimer = 0f;
             isRegenerating = false;
         }
+        else{
+            animator.SetBool("canDash", false);
+        }
     }
 
     void Attack()
-    {
+    {   
+
         if (currentStamina >= staminaDrainAmount)
         {
             currentStamina -= staminaDrainAmount;
             regenTimer = 0f;
             isRegenerating = false;
+        }
+        else{
+            animator.SetBool("canAttack", false);
         }
     }
 
@@ -76,6 +87,12 @@ public class StamBar2 : MonoBehaviour{
         {
             currentStamina += staminaRegenRate * Time.deltaTime;
             currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+            if(currentStamina >= staminaDrainAmount){
+                animator.SetBool("canAttack", true);
+            }
+            if(currentStamina >= dashStaminaCost){
+                animator.SetBool("canDash", true);
+            }
         }
         else
         {

@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
+    public StaminaSystem stam;
+    public float dashStaminaCost = 30f;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private TrailRenderer tr;
@@ -38,10 +40,11 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Space) && canDash)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && stam.CanPerformAction(dashStaminaCost))
         {
             animator.SetBool("IsDashing", true);
             StartCoroutine(Dash());            
+            stam.ConsumeStamina(dashStaminaCost);
         }
 
         animator.SetFloat("Speed", rb.velocity.magnitude);

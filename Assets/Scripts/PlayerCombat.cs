@@ -9,23 +9,25 @@ public class PlayerCombat : MonoBehaviour
     public int attackDamage = 40;
     public float attackRate = 1f;
     float nextAttacktime = 0f;
+    public StaminaSystem stam;
+    public float staminaAttackCost = 20f;
 
 
     void Update()
     {
         if (Time.time >= nextAttacktime)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && stam.CanPerformAction(staminaAttackCost))
             {
                 Attack();
                 nextAttacktime = Time.time + 1 / attackRate;
+                stam.ConsumeStamina(staminaAttackCost);
             }
         }
        
     }
 
     void Attack() {
-
         animator.SetTrigger("Attack");
 
 
