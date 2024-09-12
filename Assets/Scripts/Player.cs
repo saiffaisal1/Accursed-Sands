@@ -49,23 +49,21 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-
+            cantMove();
+            Debug.Log(GetComponent<PlayerMovement>().speed);
+            cantAttack();
         }
     }
 
     void Die()
     {
         animator.SetBool("isDead", true);
-
-
-        cantMove();
-        cantAttack();
     }
 
 
     void cantMove()
     {
-        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerMovement>().speed = 0f;
     }
 
     void cantAttack()

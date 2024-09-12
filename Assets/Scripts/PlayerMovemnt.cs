@@ -22,6 +22,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("isDead"))
+        {
+            speed = 0f;
+        }
+        else{
+            speed = 5f;
+        }
 
         if(animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
